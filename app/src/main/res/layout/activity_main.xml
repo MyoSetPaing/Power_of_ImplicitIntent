@@ -1,18 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/wave"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-</android.support.constraint.ConstraintLayout>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Power Of Implicit Intent"
+                android:textColor="#FFF"
+                android:textSize="@dimen/text_heading_1x" />
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/btn_timer"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/margin_large_n"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:backgroundTint="#7CB342"
+            android:text="Timer"
+            android:textAllCaps="false"
+            app:cornerRadius="@dimen/margin_large"
+            app:icon="@drawable/ic_access_time_black_24dp"
+            app:iconGravity="textStart" />
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/btn_calender_event"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/margin_large_n"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:backgroundTint="#1E88E5"
+            android:text="Calender Event"
+            android:textAllCaps="false"
+            app:cornerRadius="@dimen/margin_large"
+            app:icon="@drawable/ic_date_range_black_24dp"
+            app:iconGravity="textStart" />
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/btn_video_capture"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:backgroundTint="#E53935"
+            android:text="Video Capture"
+            android:textAllCaps="false"
+            app:cornerRadius="@dimen/margin_large"
+            app:icon="@drawable/ic_videocam_black_24dp"
+            app:iconGravity="textStart" />
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:orientation="horizontal">
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/btn_contact"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="-70dp"
+                android:backgroundTint="#FB8C00"
+                android:text="Contact"
+                android:textAllCaps="false"
+                app:cornerRadius="@dimen/margin_large"
+                app:icon="@drawable/ic_contacts_black_24dp"
+                app:iconGravity="textStart" />
+
+            <android.support.design.chip.Chip
+                android:id="@+id/cp_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:visibility="gone"
+                app:chipBackgroundColor="#FF4081" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/tiet_query"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:textColor="@color/colorPrimary"
+                tools:ignore="NestedWeights" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:backgroundTint="#D81B60"
+                android:text="Search"
+                android:textAllCaps="false"
+                app:cornerRadius="@dimen/margin_medium"
+                app:icon="@drawable/ic_search_black_24dp"
+                app:iconGravity="textStart" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
